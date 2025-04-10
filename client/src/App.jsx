@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Header from './components/Header';
+import RealProfileSection from './components/RealProfileSection';
+import AboutSection from './components/AboutSection';
+import PortfolioSection from './components/PortfolioSection';
+import ContactSection from './components/ContactSection';
+import AlienProfileSection from './components/AlienProfileSection';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [alienMode, setAlienMode] = useState(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div className="flex h-screen overflow-hidden bg-[#0a192f] text-gray-300">
+            {/* Columna izquierda: header */}
+            <div className="w-[35%] hidden lg:block">
+                <Header />
+            </div>
+
+            {/* Columna derecha: contenido */}
+            <main className="flex-1 overflow-y-auto scroll-smooth px-10 lg:px-24">
+                {!alienMode ? (
+                    <>
+                        <RealProfileSection />
+                        <AboutSection setAlienMode={setAlienMode} />
+                        <PortfolioSection />
+                        <ContactSection />
+                    </>
+                ) : (
+                    <AlienProfileSection />
+                )}
+            </main>
+        </div>
+    );
 }
 
-export default App
+export default App;
