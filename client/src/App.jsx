@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import RealProfileSection from './components/RealProfileSection';
 import AboutSection from './components/AboutSection';
-import PortfolioSection from './components/PortfolioSection';
+import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 import AlienProfileSection from './components/AlienProfileSection';
+import CursorSpotlight from './components/CursorSpotlight';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
     const [alienMode, setAlienMode] = useState(false);
@@ -17,18 +18,22 @@ function App() {
             </div>
 
             {/* Columna derecha: contenido */}
-            <main className="flex-1 overflow-y-auto scroll-smooth px-10 lg:px-24">
+            <main
+                id="content"
+                className="flex-1 overflow-y-auto scroll-smooth px-10 lg:px-24"
+            >
                 {!alienMode ? (
                     <>
-                        <RealProfileSection />
+                        <Toaster />
                         <AboutSection setAlienMode={setAlienMode} />
-                        <PortfolioSection />
+                        <EducationSection />
                         <ContactSection />
                     </>
                 ) : (
                     <AlienProfileSection />
                 )}
             </main>
+            <CursorSpotlight />
         </div>
     );
 }

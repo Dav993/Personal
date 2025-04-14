@@ -1,75 +1,52 @@
-import { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-
-function AboutSection({ setAlienMode }) {
-    const [showCharacter, setShowCharacter] = useState(false);
-    const [showSpeech, setShowSpeech] = useState(false);
-
-    const { ref, inView } = useInView({
-        threshold: 0.6, // activa cuando el 60% de la sección está visible
-        triggerOnce: true,
-    });
-
-    useEffect(() => {
-        if (inView) {
-            setShowCharacter(true);
-
-            const timer = setTimeout(() => {
-                setShowSpeech(true);
-            }, 3000); // aparece el bocadillo tras caminar
-
-            return () => clearTimeout(timer);
-        }
-    }, [inView]);
-
+function AboutSection() {
     return (
         <section
-            ref={ref}
             id="about"
-            className="bg-[#0a192f] text-gray-300 px-6 py-20 relative overflow-hidden min-h-screen"
+            className="bg-[#0a192f] text-gray-300 px-10 pt-22 pb-25 relative overflow-hidden"
         >
-            <div className="max-w-4xl mx-auto text-center sm:text-left">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#64ffda]">
-                    Sobre mí
-                </h2>
+            <div className="max-w-2xl mx-auto text-center sm:text-left space-y-6">
                 <p className="text-lg leading-relaxed">
-                    Me formé en comunicación audiovisual, lo que me ha permitido
-                    tener una visión creativa y crítica sobre los medios
-                    digitales. Con el tiempo, me especialicé en desarrollo web
-                    fullstack, combinando mi pasión por el diseño con
-                    habilidades técnicas para construir proyectos sólidos y
-                    visualmente interesantes.
+                    Soy un <strong>desarrollador junior</strong> orientado al
+                    detalle, con
+                    <strong> habilidades analíticas</strong> y una gran
+                    capacidad de adaptación. Me gusta{' '}
+                    <strong>aprender rápido</strong>,{' '}
+                    <strong>resolver problemas</strong> y participar activamente
+                    en <strong>entornos colaborativos</strong>, tanto en persona
+                    como en remoto.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                    Vengo del mundo de la{' '}
+                    <strong>comunicación audiovisual</strong>, lo que me permite
+                    abordar los proyectos desde una perspectiva
+                    <strong> creativa</strong>. Gracias a esta combinación,
+                    puedo <strong>diseñar experiencias digitales</strong>{' '}
+                    atractivas, funcionales y bien estructuradas.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                    Me he formado en <strong>programación web</strong> e{' '}
+                    <strong>inteligencia artificial</strong>, utilizando
+                    tecnologías como <strong>JavaScript</strong>,{' '}
+                    <strong>React</strong>,<strong> NodeJS</strong>,{' '}
+                    <strong>SQL</strong>, <strong>Tailwind</strong> y{' '}
+                    <strong>Git</strong>. También aplico metodologías ágiles
+                    como <strong>SCRUM</strong>, <strong>Scrumban</strong> y{' '}
+                    <strong>PMI</strong> para organizarme y entregar resultados
+                    sólidos.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                    Recientemente he trabajado en el{' '}
+                    <strong>sector sanitario</strong>, donde he desarrollado una
+                    gran capacidad de <strong>gestión del tiempo</strong>,
+                    <strong> multitarea</strong> y{' '}
+                    <strong>responsabilidad</strong>. Busco seguir creciendo
+                    como desarrollador y aplicar mis conocimientos en{' '}
+                    <strong>proyectos con propósito</strong>.
                 </p>
             </div>
-
-            {/* Personaje caminando */}
-            {showCharacter && (
-                <div
-                    className="absolute bottom-6 right-0 animate-walk-left px-4"
-                    style={{ animation: 'walk-left 3s linear forwards' }}
-                >
-                    <img
-                        src="/pixel-hero.png"
-                        alt="Personaje pixelado"
-                        className="w-24"
-                    />
-
-                    {showSpeech && (
-                        <div className="mt-2 bg-white text-black px-3 py-2 rounded shadow max-w-xs">
-                            <p className="text-sm mb-2">
-                                He encontrado unas gafas muy raras... ¿Quieres
-                                probarlas?
-                            </p>
-                            <button
-                                onClick={() => setAlienMode(true)}
-                                className="bg-[#64ffda] text-[#0a192f] px-3 py-1 rounded font-bold text-sm hover:bg-[#52e0c4] transition"
-                            >
-                                Ponérmelas 🕶️
-                            </button>
-                        </div>
-                    )}
-                </div>
-            )}
         </section>
     );
 }
