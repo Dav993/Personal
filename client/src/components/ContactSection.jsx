@@ -8,6 +8,23 @@ function ContactSection() {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        const name = form.current.name.value.trim();
+        const email = form.current.email.value.trim();
+        const message = form.current.message.value.trim();
+
+        // Validación de campos vacíos
+        if (!name || !email || !message) {
+            toast.error('Por favor, rellena todos los campos antes de enviar.');
+            return;
+        }
+
+        // Validación de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            toast.error('Por favor, introduce una dirección de correo válida.');
+            return;
+        }
+
         emailjs
             .sendForm(
                 'service_64yb17r',
@@ -33,12 +50,12 @@ function ContactSection() {
     return (
         <section
             id="contact"
-            className="bg-[#0a192f] text-gray-300 px-6 py-20 ml-23 -mt-20"
+            className="bg-[#0a192f] text-gray-300 px-5 sm:px-6 pt-1 pb-24"
         >
-            <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl font-medium mb-10 text-gray-200 text-center sm:text-left">
+            <div className="max-w-2xl mx-auto">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium mb-10 text-center sm:text-left text-gray-200">
                     ¿Tienes algún proyecto en mente? <br />
-                    <span className="text-base sm:text-lg font-normal">
+                    <span className="text-sm sm:text-base lg:text-lg font-normal">
                         Cuéntamelo y me pondré en contacto contigo.
                     </span>
                 </h2>
@@ -52,23 +69,28 @@ function ContactSection() {
                         name="name"
                         type="text"
                         placeholder="Tu nombre"
-                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400"
+                        required
+                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400 text-sm sm:text-base"
                     />
                     <input
                         name="email"
                         type="email"
                         placeholder="Tu correo electrónico"
-                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400"
+                        required
+                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400 text-sm sm:text-base"
                     />
                     <textarea
                         name="message"
-                        rows="5"
                         placeholder="Tu mensaje"
-                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400"
+                        required
+                        maxLength={1000}
+                        rows={5}
+                        className="bg-[#112240] text-white p-4 rounded-md outline-none focus:ring-2 focus:ring-[#64ffda] placeholder-gray-400 text-sm sm:text-base resize-none overflow-auto"
+                        style={{ overflowWrap: 'break-word' }}
                     />
                     <button
                         type="submit"
-                        className="bg-[#64ffda] text-[#0a192f] font-semibold py-3 rounded-md hover:bg-[#52e0c4] transition-colors"
+                        className="bg-[#64ffda] text-[#0a192f] font-semibold py-3 rounded-md hover:bg-[#52e0c4] transition-colors text-sm sm:text-base"
                     >
                         Enviar mensaje
                     </button>

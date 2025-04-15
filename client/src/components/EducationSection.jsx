@@ -2,7 +2,7 @@ function EducationSection() {
     return (
         <section
             id="formacion"
-            className="bg-[#0a192f] text-gray-300 px-6 py-1 min-h-screen"
+            className="bg-[#0a192f] text-gray-300 px-5 sm:px-6 pt-20 pb-24 lg:pt-1 min-h-screen"
         >
             <div className="max-w-2xl mx-auto space-y-12">
                 {/* EDUCACIÓN - ITEMS */}
@@ -45,15 +45,15 @@ function EducationSection() {
                 ].map((edu, index) => (
                     <div
                         key={index}
-                        className="flex flex-col sm:flex-row sm:items-start gap-6"
+                        className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6"
                     >
-                        <div className="w-1/2 text-sm sm:text-base text-gray-400">
+                        <div className="w-full sm:w-1/2 text-sm sm:text-base text-gray-400">
                             <p className="text-[#64ffda] font-semibold">
                                 {edu.fecha}
                             </p>
                             <p>{edu.centro}</p>
                         </div>
-                        <div className="w-1/2">
+                        <div className="w-full sm:w-1/2">
                             <h3 className="font-bold text-white">
                                 {edu.titulo}
                             </h3>
@@ -62,7 +62,7 @@ function EducationSection() {
                 ))}
 
                 {/* Enlace al CV */}
-                <div className="pt-10">
+                <div className="pt-10 text-center sm:text-left">
                     <a
                         href="/curriculum.pdf"
                         target="_blank"

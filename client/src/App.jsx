@@ -11,16 +11,14 @@ function App() {
     const [alienMode, setAlienMode] = useState(false);
 
     return (
-        <div className="flex h-screen overflow-hidden bg-[#0a192f] text-gray-300">
-            {/* Columna izquierda: header */}
-            <div className="w-[35%] hidden lg:block">
-                <Header />
-            </div>
+        <div className="flex flex-col lg:flex-row h-screen overflow-hidden bg-[#0a192f] text-gray-300">
+            {/* Header visible en todas las pantallas, cambia internamente según tamaño */}
+            <Header />
 
-            {/* Columna derecha: contenido */}
+            {/* Contenido */}
             <main
                 id="content"
-                className="flex-1 overflow-y-auto scroll-smooth px-10 lg:px-24"
+                className="flex-1 overflow-y-auto scroll-smooth px-5 sm:px-10 lg:px-24 pt-16 lg:pt-0"
             >
                 {!alienMode ? (
                     <>
