@@ -18,19 +18,22 @@ function App() {
             {/* Contenido */}
             <main
                 id="content"
-                className="flex-1 overflow-y-auto scroll-smooth px-5 sm:px-10 lg:px-24 pt-16 lg:pt-0"
+                className="flex-1 overflow-y-auto scroll-smooth pt-16 lg:pt-0"
             >
-                {!alienMode ? (
-                    <>
-                        <Toaster />
-                        <AboutSection setAlienMode={setAlienMode} />
-                        <EducationSection />
-                        <ContactSection />
-                    </>
-                ) : (
-                    <AlienProfileSection />
-                )}
+                <div className="max-w-[1100px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+                    {!alienMode ? (
+                        <>
+                            <Toaster />
+                            <AboutSection setAlienMode={setAlienMode} />
+                            <EducationSection />
+                            <ContactSection />
+                        </>
+                    ) : (
+                        <AlienProfileSection />
+                    )}
+                </div>
             </main>
+
             <CursorSpotlight />
         </div>
     );
