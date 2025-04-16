@@ -90,10 +90,7 @@ function Header() {
                 </div>
 
                 {/* Parte central: Navegación */}
-                <nav
-                    className="flex flex-col gap-5 text-base font-medium text-gray-400 mt-5 xl:mt-12
-"
-                >
+                <nav className="flex flex-col gap-5 text-base font-medium text-gray-400 mt-10 xl:mt-12">
                     {['about', 'formacion', 'contact'].map((section) => (
                         <Link
                             key={section}
@@ -112,11 +109,7 @@ function Header() {
                                       ? 'Formación'
                                       : 'Contacto'}
                             </span>
-                            <span
-                                className="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-3 bg-[#64ffda] 
-                                scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 
-                                transition-transform duration-300 origin-left"
-                            ></span>
+                            <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-3 bg-[#64ffda] scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 transition-transform duration-300 origin-left"></span>
                         </Link>
                     ))}
                 </nav>
@@ -126,7 +119,7 @@ function Header() {
                     <img
                         src="/profile-image.jpg"
                         alt="Foto de David"
-                        className="w-48 h-48 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 object-cover rounded-full border-4 border-[#64ffda] shadow-lg"
+                        className="h-[18vh] sm:h-[20vh] md:h-[22vh] lg:h-[24vh] xl:h-[26vh] 2xl:h-[28vh] w-auto aspect-square object-cover rounded-full border-4 border-[#64ffda] shadow-lg"
                     />
                     <div className="flex gap-5 text-xl text-gray-400 self-start pl-4">
                         <a
