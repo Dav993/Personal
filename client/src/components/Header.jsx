@@ -71,6 +71,8 @@ function Header() {
                     </a>
                 </div>
             </header>
+
+            {/* Header escritorio */}
             <aside className="hidden lg:flex h-full pl-6 md:pl-10 lg:pl-24 2xl:pl-80 pr-6 py-12 flex-col justify-between bg-[#0a192f]">
                 {/* Parte superior: Nombre y descripción */}
                 <div>
@@ -88,7 +90,10 @@ function Header() {
                 </div>
 
                 {/* Parte central: Navegación */}
-                <nav className="flex flex-col gap-5 text-base font-medium text-gray-400">
+                <nav
+                    className="flex flex-col gap-5 text-base font-medium text-gray-400 mt-5 xl:mt-12
+"
+                >
                     {['about', 'formacion', 'contact'].map((section) => (
                         <Link
                             key={section}
@@ -109,8 +114,8 @@ function Header() {
                             </span>
                             <span
                                 className="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-3 bg-[#64ffda] 
-                    scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 
-                    transition-transform duration-300 origin-left"
+                                scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 
+                                transition-transform duration-300 origin-left"
                             ></span>
                         </Link>
                     ))}
@@ -121,9 +126,9 @@ function Header() {
                     <img
                         src="/profile-image.jpg"
                         alt="Foto de David"
-                        className="w-56 h-56 md:w-60 md:h-60 lg:w-64 lg:h-64 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 object-cover rounded-full border-4 border-[#64ffda] shadow-lg"
+                        className="w-48 h-48 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 xl:w-64 xl:h-64 2xl:w-72 2xl:h-72 object-cover rounded-full border-4 border-[#64ffda] shadow-lg"
                     />
-                    <div className="flex gap-5 text-xl text-gray-400">
+                    <div className="flex gap-5 text-xl text-gray-400 self-start pl-4">
                         <a
                             href="https://github.com/Dav993"
                             target="_blank"
