@@ -51,6 +51,10 @@ function AboutSection() {
                         Busco seguir creciendo como desarrollador y participar
                         en <strong>proyectos con impacto</strong>.
                     </p>
+                    <p>
+                        Si quieres ver ejemplos de mi trabajo, puedes visitar
+                        los siguientes enlaces:
+                    </p>
                     <ul className="list-disc list-inside text-sm sm:text-base text-[#64ffda] space-y-1 pl-2">
                         <li>
                             <a
