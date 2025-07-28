@@ -64,7 +64,7 @@ function EducationSection() {
                 {/* Enlace al CV */}
                 <div className="pt-10 text-center sm:text-left">
                     <a
-                        href="/curriculum.pdf"
+                        href="/curriculum2.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 font-semibold text-white hover:text-[#64ffda] transition"
