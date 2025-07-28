@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "telewaldy",
+  "name": "pagina_personal",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "mysql2": "^3.14.0"
