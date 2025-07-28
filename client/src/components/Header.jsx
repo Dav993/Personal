@@ -87,6 +87,15 @@ function Header() {
                         fusionando desarrollo y diseño para contar historias con
                         impacto.
                     </p>
+                    <div className="flex flex-wrap gap-3 mt-6 text-xl text-white">
+                        <i className="devicon-wordpress-plain"></i>
+                        <i className="devicon-javascript-plain"></i>
+                        <i className="devicon-react-original"></i>
+                        <i className="devicon-nodejs-plain"></i>
+                        <i className="devicon-mysql-plain"></i>
+                        <i className="devicon-tailwindcss-plain"></i>
+                        <i className="devicon-git-plain"></i>
+                    </div>
                 </div>
 
                 {/* Parte central: Navegación */}
