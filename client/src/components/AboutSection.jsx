@@ -38,13 +38,16 @@ function AboutSection() {
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                    Recientemente he trabajado en el{' '}
-                    <strong>sector sanitario</strong>, donde he desarrollado una
-                    gran capacidad de <strong>gestión del tiempo</strong>,{' '}
-                    <strong>multitarea</strong> y{' '}
-                    <strong>responsabilidad</strong>. Busco seguir creciendo
-                    como desarrollador y aplicar mis conocimientos en{' '}
-                    <strong>proyectos con propósito</strong>.
+                    Recientemente he desarrollado{' '}
+                    <strong>cuatro páginas web</strong> con WordPress para la{' '}
+                    <strong>
+                        Fundación Iberoamericana de las Industrias Culturales y
+                        Creativas (FIBICC)
+                    </strong>
+                    , aplicando mis conocimientos en{' '}
+                    <strong>diseño y desarrollo</strong> en entornos reales.
+                    Busco seguir creciendo como desarrollador y participar en{' '}
+                    <strong>proyectos con impacto</strong>.
                 </p>
             </div>
         </section>
